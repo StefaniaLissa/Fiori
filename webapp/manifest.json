@@ -14,6 +14,16 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.10.6",
       "toolsId": "edd6f750-bf6e-4c0b-b3ab-047b392e01c1"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
     }
   },
   "sap.ui": {
@@ -33,7 +43,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": true,
+    "flexEnabled": false,
     "dependencies": {
       "minUI5Version": "1.118.0",
       "libs": {
@@ -57,6 +67,10 @@
         "settings": {
           "bundleName": "logali.invoices.i18n.i18n"
         }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true
       }
     },
     "resources": {
